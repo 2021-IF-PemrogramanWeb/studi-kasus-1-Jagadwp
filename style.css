@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@300;400;500;700;900&display=swap');
+
+body {
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 1.1rem;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+} 
+
+.logo-img {
+    width: 30%;
+}
+
+/* .btn {
+    border-radius: 15px;
+} */
