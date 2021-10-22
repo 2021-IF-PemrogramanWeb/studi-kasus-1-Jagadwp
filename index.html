@@ -18,27 +18,27 @@
 			referrerpolicy="no-referrer"
 		/>
         <link rel="stylesheet" href="style.css">
-		<title>Document</title>
+		<title>Jagad's Website</title>
 	</head>
 	<body>
 		<div class="login-box" style="width: 40%; margin: 5vh auto">
 			<div class="login-logo" align="center" style="font-size: 2rem;">
-				<a href=""><img src="/src/img/1_Primary_logo_on_transparent_234x66.png" alt="logo" class="logo-img"></a>
+				<a href="/dashboard.html"><img src="/src/img/1_Primary_logo_on_transparent_234x66.png" alt="logo" class="logo-img"></a>
 			</div>
 			<!-- /.login-logo -->
 			<div class="card my-4">
 				<div class="card-body login-card-body">
 					<p class="login-box-msg text-center fw-bold" >Sign in to start your session</p>
 
-					<form action="../../index3.html" method="post">
+					<form action="/login_action.php" method="POST">
 						<div class="input-group mb-3">
-							<input type="email" class="form-control" placeholder="Email" />
+							<input type="email" class="form-control" placeholder="Email" name="email"/>
 							<div class="input-group-text">
 								<span class="fas fa-envelope"></span>
 							</div>
 						</div>
 						<div class="input-group mb-3">
-							<input type="password" class="form-control" placeholder="Password" />
+							<input type="password" class="form-control" placeholder="Password" name="password"/>
 							<div class="input-group-text">
 								<span class="fas fa-lock"></span>
 							</div>
