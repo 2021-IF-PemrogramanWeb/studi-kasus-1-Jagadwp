@@ -32,7 +32,7 @@ $result = mysqli_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 		<ul class="nav justify-content-between py-4" style="padding: 0 8vw">
 			<li class="nav-item">
 				<a href="/index.html"
-					><img src="/studi-kasus-1-Jagadwp/src/img/1_Primary_logo_on_transparent_234x66.png" alt="logo" class="logo-img"
+					><img src="/src/img/1_Primary_logo_on_transparent_234x66.png" alt="logo" class="logo-img"
 				/></a>
 			</li>
 			<li class="nav-item">
