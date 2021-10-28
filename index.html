@@ -23,11 +23,8 @@
 	<body>
 		<div class="login-box" style="width: 40%; margin: 5vh auto">
 			<div class="login-logo" align="center" style="font-size: 2rem">
-				<a href="/dashboard.html"
-					><img
-						src="/src/img/1_Primary_logo_on_transparent_234x66.png"
-						alt="logo"
-						class="logo-img"
+				<a href="/table.php"
+					><img src="/src/img/1_Primary_logo_on_transparent_234x66.png" alt="logo" class="logo-img"
 				/></a>
 			</div>
 			<!-- /.login-logo -->
@@ -37,13 +34,13 @@
 
 					<form action="/login_action.php" method="POST">
 						<div class="input-group mb-3">
-							<input type="email" class="form-control" placeholder="Email" name="email" />
+							<input type="email" class="form-control" placeholder="Email (Type: fulan@mail.com)" name="email" />
 							<div class="input-group-text">
 								<span class="fas fa-envelope"></span>
 							</div>
 						</div>
 						<div class="input-group mb-3">
-							<input type="password" class="form-control" placeholder="Password" name="password" />
+							<input type="password" class="form-control" placeholder="Password (Type: 123)" name="password" />
 							<div class="input-group-text">
 								<span class="fas fa-lock"></span>
 							</div>
@@ -63,14 +60,9 @@
 						</div>
 					</form>
 
-					<div class="social-auth-links text-center mb-3">
-						<p>- OR -</p>
-						<a href="#" class="btn btn-block btn-primary my-2">
-							<i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-						</a>
-						<a href="#" class="btn btn-block btn-danger my-2">
-							<i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-						</a>
+					<div class="social-auth-links text-center mt-3 mb-3">
+						<a href="/table.php" class="btn btn-block btn-primary my-2"> Table Page</a>
+						<a href="/graph.php" class="btn btn-block btn-danger my-2"> Graph Page </a>
 					</div>
 					<!-- /.social-auth-links -->
 
