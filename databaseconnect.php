@@ -2,15 +2,15 @@
 
 $servername = "localhost";
 $database = "studi-kasus-1";
-$username = "root";
-$password = "";
+$username = "postgres";
+$password = "admin";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = pg_connect("host=$servername dbname=$database user=$username password=$password");
 
 // Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed: " . pg_last_error());
 }
 // echo "Connected successfully";
 ?>

@@ -179,7 +179,7 @@ $result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 								<tbody>
 								<?php while( $data = pg_fetch_assoc($result) ) : ?>       
 									<tr class="odd">
-										<td class="dtr-control sorting_1" tabindex="0"><?= $data["renderer"] ?></td>
+										<td class="dtr-control sorting_1" tabindex="0"><?= $data["name"] ?></td>
 										<td><?= $data["name"] ?></td>
 										<td><?= $data["platform"] ?></td>
 										<td><?= $data["engine_version"] ?></td>
@@ -295,10 +295,6 @@ $result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 				</div>
 			</div>
 		</section>
-		<div class="social-auth-links text-center mt-3 mb-3">
-        	<a href="/index.html" class="btn btn-block btn-primary my-2"> Login Page</a>
-        	<a href="/graph.php" class="btn btn-block btn-danger my-2"> Graph Page </a>
-		</div>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
