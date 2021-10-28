@@ -31,12 +31,12 @@ $result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 	<body>
 		<ul class="nav justify-content-between py-4" style="padding: 0 8vw">
 			<li class="nav-item">
-				<a href="/index.html"
+				<a href="/index.php"
 					><img src="/src/img/1_Primary_logo_on_transparent_234x66.png" alt="logo" class="logo-img"
 				/></a>
 			</li>
 			<li class="nav-item">
-				<a class="btn btn-danger btn-block ml-auto" aria-current="page" href="/index.html">Sign Out</a>
+				<a class="btn btn-danger btn-block ml-auto" aria-current="page" href="/index.php">Sign Out</a>
 			</li>
 		</ul>
 
@@ -296,7 +296,7 @@ $result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 			</div>
 		</section>
 		<div class="social-auth-links text-center mt-3 mb-3">
-        	<a href="/index.html" class="btn btn-block btn-primary my-2"> Login Page</a>
+        	<a href="/index.php" class="btn btn-block btn-primary my-2"> Login Page</a>
         	<a href="/graph.php" class="btn btn-block btn-danger my-2"> Graph Page </a>
 		</div>
 		<script

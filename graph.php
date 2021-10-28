@@ -56,7 +56,7 @@
     <div id="barchart_material" style="width: 900px; height: 500px;"></div>
 
     <div class="social-auth-links text-center mt-3 mb-3">
-        <a href="/index.html" class="btn btn-block btn-primary my-2"> Login Page</a>
+        <a href="/index.php" class="btn btn-block btn-primary my-2"> Login Page</a>
         <a href="/table.php" class="btn btn-block btn-danger my-2"> Table Page </a>
 	</div>
   </body>
