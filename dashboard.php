@@ -1,3 +1,11 @@
+<?php
+// Create database connection using config file
+include_once("databaseconnect.php");
+ 
+// Fetch all users data from database
+$result = mysqli_query($conn, "SELECT * FROM browser ORDER BY id ASC");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -24,7 +32,7 @@
 		<ul class="nav justify-content-between py-4" style="padding: 0 8vw">
 			<li class="nav-item">
 				<a href="/index.html"
-					><img src="/src/img/1_Primary_logo_on_transparent_234x66.png" alt="logo" class="logo-img"
+					><img src="/studi-kasus-1-Jagadwp/src/img/1_Primary_logo_on_transparent_234x66.png" alt="logo" class="logo-img"
 				/></a>
 			</li>
 			<li class="nav-item">
@@ -169,76 +177,15 @@
 									</tr>
 								</thead>
 								<tbody>
+								<?php while( $data = mysqli_fetch_assoc($result) ) : ?>       
 									<tr class="odd">
-										<td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-										<td>Firefox 1.0</td>
-										<td>Win 98+ / OSX.2+</td>
-										<td>1.7</td>
-										<td style="color: inherit">A</td>
+										<td class="dtr-control sorting_1" tabindex="0"><?= $data["name"] ?></td>
+										<td><?= $data["name"] ?></td>
+										<td><?= $data["platform"] ?></td>
+										<td><?= $data["engine_version"] ?></td>
+										<td style="color: inherit"><?= $data["css_grade"] ?></td>
 									</tr>
-									<tr class="even">
-										<td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-										<td>Firefox 1.5</td>
-										<td>Win 98+ / OSX.2+</td>
-										<td>1.8</td>
-										<td style="color: inherit">A</td>
-									</tr>
-									<tr class="odd">
-										<td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-										<td>Firefox 2.0</td>
-										<td>Win 98+ / OSX.2+</td>
-										<td>1.8</td>
-										<td style="color: inherit">A</td>
-									</tr>
-									<tr class="even">
-										<td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-										<td>Firefox 3.0</td>
-										<td>Win 2k+ / OSX.3+</td>
-										<td>1.9</td>
-										<td style="color: inherit">A</td>
-									</tr>
-									<tr class="odd">
-										<td class="sorting_1 dtr-control">Gecko</td>
-										<td>Camino 1.0</td>
-										<td>OSX.2+</td>
-										<td>1.8</td>
-										<td style="color: inherit">A</td>
-									</tr>
-									<tr class="even">
-										<td class="sorting_1 dtr-control">Gecko</td>
-										<td>Camino 1.5</td>
-										<td>OSX.3+</td>
-										<td>1.8</td>
-										<td style="color: inherit">A</td>
-									</tr>
-									<tr class="odd">
-										<td class="sorting_1 dtr-control">Gecko</td>
-										<td>Netscape 7.2</td>
-										<td>Win 95+ / Mac OS 8.6-9.2</td>
-										<td>1.7</td>
-										<td style="color: inherit">A</td>
-									</tr>
-									<tr class="even">
-										<td class="sorting_1 dtr-control">Gecko</td>
-										<td>Netscape Browser 8</td>
-										<td>Win 98SE+</td>
-										<td>1.7</td>
-										<td style="color: inherit">A</td>
-									</tr>
-									<tr class="odd">
-										<td class="sorting_1 dtr-control">Gecko</td>
-										<td>Netscape Navigator 9</td>
-										<td>Win 98+ / OSX.2+</td>
-										<td>1.8</td>
-										<td style="color: inherit">A</td>
-									</tr>
-									<tr class="even">
-										<td class="sorting_1 dtr-control">Gecko</td>
-										<td>Mozilla 1.0</td>
-										<td>Win 95+ / OSX.1+</td>
-										<td>1</td>
-										<td style="color: inherit">A</td>
-									</tr>
+								<?php endwhile; ?>
 								</tbody>
 								<tfoot>
 									<tr>
@@ -355,3 +302,4 @@
 		></script>
 	</body>
 </html>
+
