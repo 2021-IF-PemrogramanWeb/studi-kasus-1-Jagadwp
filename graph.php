@@ -14,8 +14,8 @@
             ['students', 'contribution'],
              <?php
              $sql = "SELECT * FROM contribution";
-             $fire = pg_query($conn,$sql);
-            while ($result = pg_fetch_assoc($fire)) {
+             $fire = mysqli_query($conn,$sql);
+            while ($result = mysqli_fetch_assoc($fire)) {
             echo"['".$result['student']."',".$result['contribution']."],";
           }
          ?>

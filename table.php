@@ -3,7 +3,7 @@
 include_once("databaseconnect.php");
  
 // Fetch all users data from database
-$result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
+$result = mysqli_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 ?>
 
 <!DOCTYPE html>
@@ -177,7 +177,7 @@ $result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 									</tr>
 								</thead>
 								<tbody>
-								<?php while( $data = pg_fetch_assoc($result) ) : ?>       
+								<?php while( $data = mysqli_fetch_assoc($result) ) : ?>       
 									<tr class="odd">
 										<td class="dtr-control sorting_1" tabindex="0"><?= $data["renderer"] ?></td>
 										<td><?= $data["name"] ?></td>
