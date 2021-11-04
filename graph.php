@@ -1,5 +1,6 @@
 <?php
   include_once("databaseconnect.php");
+  $query = "SELECT reason_id, count(*) AS total FROM activity GROUP BY reason_id ORDER BY reason_id";
 ?>
 
 <html>
@@ -11,19 +12,18 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['students', 'contribution'],
-             <?php
-             $sql = "SELECT * FROM contribution";
-             $fire = pg_query($conn,$sql);
+            ['Reason Id', 'Total'],
+            <?php
+            $fire = pg_query($conn,$query);
             while ($result = pg_fetch_assoc($fire)) {
-            echo"['".$result['student']."',".$result['contribution']."],";
-          }
+              echo "[{$result['reason_id']}, {$result['total']}],";
+            }
          ?>
         ]);
 
         var options = {
           chart: {
-            title: 'Contribution',
+            title: 'Trend of Reason',
           },
           bars: 'vertical' // Required for Material Bar Charts.
         };
@@ -53,12 +53,14 @@
     <title>Jagad's Website</title>
   </head>
   <body>
-    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+    <section class="d-flex justify-content-center py-4">
+      <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+    </section>
 
-    <div class="social-auth-links text-center mt-3 mb-3">
+    <div class="social-auth-links text-center mt-2 mb-3">
         <a href="/index.php" class="btn btn-block btn-primary my-2"> Login Page</a>
         <a href="/table.php" class="btn btn-block btn-danger my-2"> Table Page </a>
-	</div>
+    </div>
   </body>
 </html>
 

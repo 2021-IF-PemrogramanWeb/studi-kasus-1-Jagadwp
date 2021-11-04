@@ -3,7 +3,7 @@
 include_once("databaseconnect.php");
  
 // Fetch all users data from database
-$result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
+$result = pg_query($conn, "SELECT * FROM activity ORDER BY id ASC");
 ?>
 
 <!DOCTYPE html>
@@ -131,7 +131,7 @@ $result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 											aria-sort="ascending"
 											aria-label="Rendering engine: activate to sort column descending"
 										>
-											Rendering engine
+											No
 										</th>
 										<th
 											class="sorting"
@@ -139,9 +139,8 @@ $result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 											aria-controls="example1"
 											rowspan="1"
 											colspan="1"
-											aria-label="Browser: activate to sort column ascending"
 										>
-											Browser
+											On
 										</th>
 										<th
 											class="sorting"
@@ -149,9 +148,8 @@ $result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 											aria-controls="example1"
 											rowspan="1"
 											colspan="1"
-											aria-label="Platform(s): activate to sort column ascending"
 										>
-											Platform(s)
+											Off
 										</th>
 										<th
 											class="sorting"
@@ -161,7 +159,7 @@ $result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 											colspan="1"
 											aria-label="Engine version: activate to sort column ascending"
 										>
-											Engine version
+											Ack by
 										</th>
 										<th
 											class="sorting"
@@ -169,31 +167,40 @@ $result = pg_query($conn, "SELECT * FROM browser ORDER BY id ASC");
 											aria-controls="example1"
 											rowspan="1"
 											colspan="1"
-											aria-label="CSS grade: activate to sort column ascending"
-											style="color: inherit"
 										>
-											CSS grade
+											Reason Id
+										</th>
+										<th
+											class="sorting"
+											tabindex="0"
+											aria-controls="example1"
+											rowspan="1"
+											colspan="1"
+										>
+											Reason
 										</th>
 									</tr>
 								</thead>
 								<tbody>
 								<?php while( $data = pg_fetch_assoc($result) ) : ?>       
 									<tr class="odd">
-										<td class="dtr-control sorting_1" tabindex="0"><?= $data["renderer"] ?></td>
-										<td><?= $data["name"] ?></td>
-										<td><?= $data["platform"] ?></td>
-										<td><?= $data["engine_version"] ?></td>
-										<td style="color: inherit"><?= $data["css_grade"] ?></td>
+										<td class="dtr-control sorting_1" tabindex="0"><?= $data["id"] ?></td>
+										<td><?= $data["time_on"] ?></td>
+										<td><?= $data["time_off"] ?></td>
+										<td><?= $data["ack_by"] ?></td>
+										<td><?= $data["reason_id"] ?></td>
+										<td><?= $data["reason"] ?></td>
 									</tr>
 								<?php endwhile; ?>
 								</tbody>
 								<tfoot>
 									<tr>
-										<th rowspan="1" colspan="1">Rendering engine</th>
-										<th rowspan="1" colspan="1">Browser</th>
-										<th rowspan="1" colspan="1">Platform(s)</th>
-										<th rowspan="1" colspan="1">Engine version</th>
-										<th rowspan="1" colspan="1" style="color: inherit">CSS grade</th>
+										<th rowspan="1" colspan="1">No</th>
+										<th rowspan="1" colspan="1">On</th>
+										<th rowspan="1" colspan="1">Off</th>
+										<th rowspan="1" colspan="1">Ack by</th>
+										<th rowspan="1" colspan="1">Reason_id</th>
+										<th rowspan="1" colspan="1">Reason</th>
 									</tr>
 								</tfoot>
 							</table>
