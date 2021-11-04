@@ -1,9 +1,15 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['login'])) {
+	header("Location: /index.php");
+	exit;
+}
 // Create database connection using config file
 include_once("databaseconnect.php");
  
 // Fetch all users data from database
-$result = pg_query($conn, "SELECT * FROM activity ORDER BY id ASC");
+$result = pg_query($conn, 'SELECT * FROM activity ORDER BY id ASC');
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +42,7 @@ $result = pg_query($conn, "SELECT * FROM activity ORDER BY id ASC");
 				/></a>
 			</li>
 			<li class="nav-item">
-				<a class="btn btn-danger btn-block ml-auto" aria-current="page" href="/index.php">Sign Out</a>
+				<a class="btn btn-danger btn-block ml-auto" aria-current="page" href="/logout.php">Sign Out</a>
 			</li>
 		</ul>
 
@@ -97,6 +103,11 @@ $result = pg_query($conn, "SELECT * FROM activity ORDER BY id ASC");
 									>
 										<span>Column visibility</span>
 									</button>
+								</div>
+								<div class="social-auth-links text-center mt-3 mb-3">
+									<a href="/index.php" class="btn btn-block btn-primary my-2"> Login Page</a>
+									<a href="/graph.php" class="btn btn-block btn-dark my-2"> Graph Page </a>
+									<a href="" class="fw-bold btn btn-block btn-btn-outline-info my-2">Welcome <?= $_SESSION["username"]?> !</a>
 								</div>
 							</div>
 						</div>
@@ -302,10 +313,6 @@ $result = pg_query($conn, "SELECT * FROM activity ORDER BY id ASC");
 				</div>
 			</div>
 		</section>
-		<div class="social-auth-links text-center mt-3 mb-3">
-        	<a href="/index.php" class="btn btn-block btn-primary my-2"> Login Page</a>
-        	<a href="/graph.php" class="btn btn-block btn-danger my-2"> Graph Page </a>
-		</div>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

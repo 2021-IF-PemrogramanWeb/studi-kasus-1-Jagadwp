@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+include_once('databaseconnect.php');
+// $result =  pg_query($conn, "SELECT * FROM admin WHERE email = 'jwp@mail.com' AND password = '123' LIMIT 1");
+// $res = pg_fetch_assoc($result);
+// print_r($res);
+
+// var_dump($result);
+
 if(isset($_SESSION['login'])) {
 	header("Location: /table.php");
 	exit;
@@ -55,6 +62,7 @@ if(isset($_SESSION['login'])) {
 								<span class="fas fa-lock"></span>
 							</div>
 						</div>
+						<p class="fst-italic text-danger">Username/password salah</p>
 						<div class="row">
 							<div class="col-md-12 col-lg-10">
 								<div class="icheck-primary">
