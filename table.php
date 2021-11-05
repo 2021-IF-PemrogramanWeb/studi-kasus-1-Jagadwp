@@ -107,9 +107,9 @@ $result = pg_query($conn, 'SELECT * FROM activity ORDER BY id ASC');
 								<div class="social-auth-links text-center mt-3 mb-3">
 									<a href="/index.php" class="btn btn-block btn-primary my-2"> Login Page</a>
 									<a href="/graph.php" class="btn btn-block btn-dark my-2"> Graph Page </a>
-									<a href="" class="fw-bold btn btn-block btn-outline-info my-2">Welcome <?= $_SESSION["username"]?> !</a>
+									<a href="" class="fw-bold btn btn-block my-2 disabled">Welcome <?= $_SESSION["username"]?> !</a>
 									<?php if (isset($_COOKIE["test"])): ?>
-									<a href="" class="fw-bold btn btn-block btn-outline-success my-2"><?= $_COOKIE["test"]?></a>
+									<a href="" class="fst-italic btn btn-block text-success my-2 disabled"><?= $_COOKIE["test"]?></a>
 									<?php endif ?>
 								</div>
 							</div>
