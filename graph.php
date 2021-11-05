@@ -71,6 +71,9 @@ $query = 'SELECT reason_id, count(*) AS total FROM activity GROUP BY reason_id O
         <a href="/index.php" class="btn btn-block btn-primary my-2"> Login Page</a>
         <a href="/table.php" class="btn btn-block btn-dark my-2"> Table Page </a>
         <a class="btn btn-danger btn-block ml-auto" aria-current="page" href="/logout.php">Sign Out</a>
+        <?php if (isset($_COOKIE["test"])): ?>
+        <a class="btn btn-btn-outline-success btn-block ml-auto" aria-current="page" href=""><?= $_COOKIE["test"]?></a>
+        <?php endif ?>
     </div>
   </body>
 </html>

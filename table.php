@@ -108,6 +108,9 @@ $result = pg_query($conn, 'SELECT * FROM activity ORDER BY id ASC');
 									<a href="/index.php" class="btn btn-block btn-primary my-2"> Login Page</a>
 									<a href="/graph.php" class="btn btn-block btn-dark my-2"> Graph Page </a>
 									<a href="" class="fw-bold btn btn-block btn-btn-outline-info my-2">Welcome <?= $_SESSION["username"]?> !</a>
+									<?php if (isset($_COOKIE["test"])): ?>
+									<a href="" class="fw-bold btn btn-block btn-btn-outline-success my-2"><?= $_COOKIE["test"]?></a>
+									<?php endif ?>
 								</div>
 							</div>
 						</div>

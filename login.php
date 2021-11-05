@@ -13,7 +13,9 @@ if (isset($_POST['login'])) {
 
 		$data = pg_fetch_assoc($result);
 		$username = explode("@", $data["email"])[0];
-		$_SESSION["username"] = $username;
+		$_SESSION["username"] = ucfirst($username);
+
+		setcookie('test', 'cookie is active', time() + 20, "/");
 
 		header("Location: /table.php");
 		exit;
