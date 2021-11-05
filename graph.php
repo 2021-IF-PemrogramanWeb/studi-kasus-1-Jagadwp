@@ -61,7 +61,7 @@ $query = 'SELECT reason_id, count(*) AS total FROM activity GROUP BY reason_id O
   </head>
   <body>
     <div class="px-3">
-      <a href="" class="fw-bold btn btn-block btn-btn-outline-info my-2">Welcome <?= $_SESSION["username"]?> !</a>
+      <a href="" class="fw-bold btn btn-block btn-outline-info my-2">Welcome <?= $_SESSION["username"]?> !</a>
     </div>
     <section class="d-flex justify-content-center py-4">
       <div id="barchart_material" style="width: 900px; height: 500px;"></div>
@@ -72,7 +72,7 @@ $query = 'SELECT reason_id, count(*) AS total FROM activity GROUP BY reason_id O
         <a href="/table.php" class="btn btn-block btn-dark my-2"> Table Page </a>
         <a class="btn btn-danger btn-block ml-auto" aria-current="page" href="/logout.php">Sign Out</a>
         <?php if (isset($_COOKIE["test"])): ?>
-        <a class="btn btn-btn-outline-success btn-block ml-auto" aria-current="page" href=""><?= $_COOKIE["test"]?></a>
+        <a class="fst-italic btn btn-outline-success btn-block ml-auto" aria-current="page" href=""><?= $_COOKIE["test"]?></a>
         <?php endif ?>
     </div>
   </body>
