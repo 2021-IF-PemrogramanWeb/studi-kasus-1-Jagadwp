@@ -3,9 +3,18 @@ session_start();
 include_once('databaseconnect.php');
 
 if (isset($_POST['login'])) {
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-	$result =  pg_query($conn, "SELECT * FROM admin WHERE email = '$email' AND password = '$password' LIMIT 1");
+
+	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+
+		header("Location: /studi-kasus-1-pweb-f/loginFailed.php");
+		exit;
+	}
+
+	$email = pg_escape_string($_POST['email']);
+	$password = pg_escape_string($_POST['password']);
+	
+	$result =  pg_prepare($conn, "login_query", 'SELECT * FROM admin WHERE email = $1 AND password = $2 LIMIT 1');
+	$result =  pg_execute($conn, "login_query", array($email, $password));
 	
 
 	if (pg_num_rows($result) === 1) {
