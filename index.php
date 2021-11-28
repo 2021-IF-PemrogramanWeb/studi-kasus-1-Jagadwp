@@ -31,7 +31,7 @@ if(isset($_SESSION['login'])) {
 		<title>Jagad's Website</title>
 	</head>
 	<body>
-		<div class="login-box" style="width: 40%; margin: 5vh auto">
+		<div class="login-box" style="width: 45%; margin: 5vh auto">
 			<div class="login-logo" align="center" style="font-size: 2rem">
 				<a href="/table.php"
 					><img src="/src/img/1_Primary_logo_on_transparent_234x66.png" alt="logo" class="logo-img"
