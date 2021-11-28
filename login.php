@@ -15,10 +15,10 @@ if (isset($_POST['login'])) {
 		$username = explode("@", $data["email"])[0];
 		$_SESSION["username"] = $username;
 
-		header("Location: /table.php");
+		header("Location: /studi-kasus-1-pweb-f/table.php");
 		exit;
 	} 
 
-	header("Location: /loginFailed.php");
+	header("Location: /studi-kasus-1-pweb-f/loginFailed.php");
 }
 ?>
