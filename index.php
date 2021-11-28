@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION['login'])) {
-	header("Location: /studi-kasus-1-pweb-f/table.php");
+	header("Location: /table.php");
 	exit;
 }
 
@@ -33,7 +33,7 @@ if(isset($_SESSION['login'])) {
 	<body>
 		<div class="login-box" style="width: 40%; margin: 5vh auto">
 			<div class="login-logo" align="center" style="font-size: 2rem">
-				<a href="/studi-kasus-1-pweb-f/table.php"
+				<a href="/table.php"
 					><img src="/src/img/1_Primary_logo_on_transparent_234x66.png" alt="logo" class="logo-img"
 				/></a>
 			</div>
@@ -42,7 +42,7 @@ if(isset($_SESSION['login'])) {
 				<div class="card-body login-card-body">
 					<p class="login-box-msg text-center fw-bold">Sign in to start your session</p>
 
-					<form action="/studi-kasus-1-pweb-f/login.php" method="POST">
+					<form action="/login.php" method="POST">
 						<div class="input-group mb-3">
 							<input type="email" class="form-control" placeholder="Email" name="email" />
 							<div class="input-group-text">
@@ -71,8 +71,8 @@ if(isset($_SESSION['login'])) {
 					</form>
 
 					<div class="social-auth-links text-center mt-3 mb-3">
-						<a href="/studi-kasus-1-pweb-f/table.php" class="btn btn-block btn-primary my-2"> Table Page</a>
-						<a href="/studi-kasus-1-pweb-f/graph.php" class="btn btn-block btn-danger my-2"> Graph Page </a>
+						<a href="/table.php" class="btn btn-block btn-primary my-2"> Table Page</a>
+						<a href="/graph.php" class="btn btn-block btn-danger my-2"> Graph Page </a>
 					</div>
 					<!-- /.social-auth-links -->
 

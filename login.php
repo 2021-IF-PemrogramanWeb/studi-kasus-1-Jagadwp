@@ -6,7 +6,7 @@ if (isset($_POST['login'])) {
 
 	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
-		header("Location: /studi-kasus-1-pweb-f/loginFailed.php");
+		header("Location: /loginFailed.php");
 		exit;
 	}
 
@@ -24,10 +24,10 @@ if (isset($_POST['login'])) {
 		$username = explode("@", $data["email"])[0];
 		$_SESSION["username"] = $username;
 
-		header("Location: /studi-kasus-1-pweb-f/table.php");
+		header("Location: /table.php");
 		exit;
 	} 
 
-	header("Location: /studi-kasus-1-pweb-f/loginFailed.php");
+	header("Location: /loginFailed.php");
 }
 ?>

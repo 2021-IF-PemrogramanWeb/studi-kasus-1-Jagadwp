@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['login'])) {
-	header("Location: /studi-kasus-1-pweb-f/index.php");
+	header("Location: /index.php");
 	exit;
 }
 
@@ -68,9 +68,9 @@ $query = 'SELECT reason_id, count(*) AS total FROM activity GROUP BY reason_id O
     </section>
 
     <div class="social-auth-links text-center mt-2 mb-3">
-        <a href="/studi-kasus-1-pweb-f/index.php" class="btn btn-block btn-primary my-2"> Login Page</a>
-        <a href="/studi-kasus-1-pweb-f/table.php" class="btn btn-block btn-dark my-2"> Table Page </a>
-        <a class="btn btn-danger btn-block ml-auto" aria-current="page" href="/studi-kasus-1-pweb-f/logout.php">Sign Out</a>
+        <a href="/index.php" class="btn btn-block btn-primary my-2"> Login Page</a>
+        <a href="/table.php" class="btn btn-block btn-dark my-2"> Table Page </a>
+        <a class="btn btn-danger btn-block ml-auto" aria-current="page" href="/logout.php">Sign Out</a>
     </div>
   </body>
 </html>
